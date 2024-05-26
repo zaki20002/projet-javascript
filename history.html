@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/46fce7ab04.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body {
+        background-image: url(GIfX3UHWIAAJBr9.jpeg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    nav{
+        background-color: #e0eff8;
+    }
+    #logo{
+        width: 55px;
+        height: 55px;
+    }
+    .para {
+        color: white;
+        font-size: larger;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: rgba(0, 0, 0, 0.473);
+        text-align: justify;
+        padding: 50px;
+    }
+    .para p{
+        text-align: center;
+    }
+    .competition{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+    }
+    .competition section {
+        background-color: aliceblue;
+        width: 50%;
+        margin-right: 10px;
+        border: 1px solid #8f0000;
+        border-radius: 5px;
+    }
+    section h1{
+        background-color: rgb(8, 8, 121);
+        color: white;
+        padding: 2px;
+        text-align: center;
+        font-size: 30px;
+    }
+    .drapo-logo{
+        background-color: white;
+        width: 100%;
+    }
+    #drapo {
+        width: 60%;
+        margin-left: 20%;
+        padding: 5px;
+    }
+    .partenaires{
+        display: flex;
+        justify-content: space-around;
+    }
+    .partenaires img {
+        width: 200px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+    .partenaires img:hover{
+        border-bottom: 2px solid yellow;
+    }
+    .sociaux{
+        display: flex;
+        justify-content: space-around;
+    }
+    .sociaux img {
+        width: 200px;
+        height: 100px;
+    }
+    .sociaux img:hover{
+        border: 2px solid white;
+    }
+    footer{
+        background-color: rgb(13, 13, 48);
+    }
+    h1{
+        color: white;
+        text-align: center;
+        font-size: x-large;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    fieldset{
+        border: 1px solid yellow;
+    }
+    legend{
+        color: yellow;
+        text-align: center;
+        font-size: large;
+        font-family:Georgia, 'Times New Roman', Times, serif ;
+    }
+    #FCB {
+        width: 100%;
+        height: 110px;
+        padding: 5px;
+    }
+    @media screen and (max-width:1280px){
+        body{
+            background-size: 200%;
+            background-repeat: no-repeat;
+        }
+        .sociaux{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .sociaux img {
+            width: 150px;
+            height: 100px;
+        }
+    }
+    @media screen and (max-width:926px) {
+        body{
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .partenaires img {
+            width: 125px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+    }
+    @media screen and (max-width:568px){
+        .partenaires img {
+            width: 100px;
+        }
+    }
+</style>
+<body>
+    <header>       
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="projet.html">
+                    <img id="logo" src="logo-FCB.png" alt="FCB">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item"><a class="nav-link" href="history.html">history</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Boutique</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" id="search" style="border: 1px solid #8f0000;" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" id="searchButton" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item" style="padding-left: 5px;"><a class="nav-link" href="sign up.html"><i class="fa-solid fa-right-to-bracket" style="color: #8f0000; margin-right: 5px;"></i>Sign Up</a></li>
+                        <li class="nav-item" style="padding-left: 5px;"><a class="nav-link" href="login.html"><i class="fa-solid fa-user" style="color: #8f0000; margin-right: 5px;"></i>Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="para">
+        <p>Le Futbol Club Barcelona, communément appelé FC Barcelone (diminutif Barça), est un club de football espagnol fondé en 1899, basé à Barcelone, capitale de la Catalogne, et qui évolue dans le championnat d'Espagne. </p>
+        <p>Le club a remporté au total vingt-sept championnats, trente-et-une coupes d'Espagne, cinq Ligues des champions, quatre coupes des vainqueurs de coupe, trois coupes des villes de foires et trois coupes du monde des clubs.</p>
+        <p>Établis initialement au stade des Corts, les Blaugranes sont basés depuis 1957 au rebaptisé Camp Nou (catalan pour « nouveau stade »), le plus grand stade d'Europe avec 99 354 places.</p>
+        <p>Depuis le mandat du président Joan Laporta, initié en 2003, le Barça connaît un succès sportif inédit dans son histoire, et devient le club le plus populaire d'Europe. Pep Guardiola rencontre en quatre ans un succès exceptionnel, dont un inédit sextuplé en 2008-2009 (Championnat, Coupe et Supercoupe d'Espagne, Ligue des champions, Supercoupe de l'UEFA et Coupe du monde des clubs). Pour sa première saison sur le banc, l'entraîneur Luis Enrique remporte en 2014-2015 la Ligue des champions, le Championnat et la Coupe.</p>
+    </div>
+    <section class="competition">
+        <section>
+            <h1>Compétitions nationales</h1>
+            <ul>
+                <strong>Compétitions actuelles</strong>
+                <li>Championnat d'Espagne (27)
+                    <ul>
+                        <li>Champion : 1929, 1945, 1948, 1949, 1952, 1953, 1959, 1960, 1974, 1985, 1991, 1992, 1993, 1994, 1998, 1999, 2005, 2006, 2009, 2010, 2011, 2013, 2015, 2016, 2018, 2019 et 2023.</li>
+                        <li>Vice-champion : 1930, 1946, 1954, 1955, 1956, 1962, 1964, 1967, 1968, 1971, 1973, 1976, 1977, 1978, 1982, 1986, 1987, 1989, 1997, 2000, 2004, 2007, 2012, 2014, 2017, 2020 et 2022.</li>
+                    </ul>
+                </li>
+                <li>Coupe d'Espagne (31)
+                    <ul>
+                        <li>Vainqueur : 1910, 1912, 1913, 1920, 1922, 1925, 1926, 1928, 1942, 1951, 1952, 1953, 1957, 1959, 1963, 1968, 1971, 1978, 1981, 1983, 1988, 1990, 1997, 1998, 2009, 2012, 2015, 2016, 2017, 2018 et 2021.</li>
+                        <li>Finaliste : 1902, 1919, 1932, 1936, 1954, 1974, 1984, 1986, 1996, 2011, 2014 et 2019.</li>
+                    </ul>
+                </li>
+                <li>Supercoupe d'Espagne (14)
+                    <ul>
+                        <li>Vainqueur : 1983, 1991, 1992, 1994, 1996, 2005, 2006, 2009, 2010, 2011, 2013, 2016, 2018 et 2023.</li>
+                        <li>Finaliste : 1985, 1988, 1990, 1993, 1997, 1998, 1999, 2012, 2015, 2017, 2021 et 2024.</li>
+                    </ul>
+                </li>
+                <strong>Anciennes compétitions</strong>
+                <li>Coupe de la Ligue (de 1983 à 1986) (2)
+                    <ul>
+                        <li>Vainqueur : 1983 et 1986.</li>
+                    </ul>
+                </li>
+                <li>Coupe Eva Duarte (de 1947 à 1953) (3)
+                    <ul>
+                        <li>Vainqueur : 1948, 1952 et 1953.</li>
+                        <li>Finaliste : 1949 et 1951.</li>
+                    </ul>
+                </li>
+                <li>Copa de Oro Argentina (de 1945 à 1946) (1)
+                    <ul>
+                        <li>Vainqueur : 1945.</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </section>
+        <section>
+            <h1>Compétitions internationales</h1>
+            <ul>
+                <strong>Compétitions actuelles</strong>
+                <li>Ligue des champions (5)
+                    <ul>
+                        <li>Vainqueur : 1992, 2006, 2009, 2011 et 2015</li>
+                        <li>Finaliste : 1961, 1986 et 1994.</li>
+                    </ul>
+                </li>
+                <li>Coupe du monde des clubs (3)
+                    <ul>
+                        <li>Vainqueur : 2009, 2011 et 2015.</li>
+                        <li>Finaliste : 2006.</li>
+                    </ul>
+                </li>
+                <li>Supercoupe de l'UEFA (5)
+                    <ul>
+                        <li>Vainqueur : 1992, 1997, 2009, 2011 et 2015.</li>
+                        <li>Finaliste : 1979, 1982, 1989 et 2006.</li>
+                    </ul>
+                </li>
+                <strong>Anciennes compétitions</strong>
+                <li>Coupe intercontinentale (de 1960 à 2004)
+                    <ul>
+                        <li>Finaliste : 1992.</li>
+                    </ul>
+                </li>
+                <li>Coupe d'Europe des vainqueurs de coupe (de 1960 à 1999) (4)
+                    <ul>
+                        <li>Vainqueur : 1979, 1982, 1989 et 1997.</li>
+                        <li>Finaliste : 1969 et 1991.</li>
+                    </ul>
+                </li>
+                <li>Coupe des villes de foires (de 1955 à 1971) (3)
+                    <ul>
+                        <li>Vainqueur : 1958, 1960 et 1966.</li>
+                        <li>Finaliste : 1962.</li>
+                    </ul>
+                </li>
+                <li>Coupe Latine (de 1949 à 1957) (2)
+                    <ul>
+                        <li>Vainqueur : 1949 et 1952.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </section>
+    <div class="drapo-logo">
+        <img id="drapo" src="drapo.png" alt="logo">
+    </div>
+
+    <footer>
+        <div>
+            <img id="FCB" src="fcb.png" alt="FCB">
+        </div>
+        <div>
+            <fieldset>
+                <legend>PARTENAIRES PRINCIPAUX DU CLUB</legend>
+                <div class="partenaires">
+                    <div>
+                        <a href="https://www.nike.com/ma/">
+                            <img src="nice.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://open.spotify.com/genre/0JQ5DAqbMKFzsCGvlWfxyX">
+                            <img src="spotify.png" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.philips.co.uk/c-m-so/tv">
+                            <img src="ambilight.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </fieldset>
+            <h1>Suivez le Barça sur les réseaux sociaux</h1>
+            <div class="sociaux">
+                <div>
+                    <a href="https://www.facebook.com/fcbarcelona/">
+                        <img src="fb.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://twitter.com/fcbarcelona_fra">
+                        <img src="twitter.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.youtube.com/user/fcbarcelona">
+                        <img src="youtube.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/fcbarcelona/">
+                        <img src="insta.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.tiktok.com/@fcbarcelona">
+                        <img src="tiktok.png" alt="">
+                    </a>
+                </div>
+                <div>
+                    <a href="https://open.spotify.com/user/31gorrj76f2m3wczoifm6f6tbn3q?si=a20bf0c076684729&nd=1">
+                        <img src="spoti.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

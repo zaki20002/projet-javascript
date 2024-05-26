@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/46fce7ab04.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body {
+            background-image: url(GIfX3UHWIAAJBr9.jpeg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        nav{
+            background-color: #e0eff8;
+        }
+        #logo{
+            width: 55px;
+            height: 55px;
+        }
+        h1{
+            margin-top: 10px;
+            font-size: 50px;
+            font-family: arial black;
+            text-align: center;
+            color: #e0eff8;
+            background-color: #8f0000;
+            text-decoration: underline yellow;
+            padding-bottom: 3px;
+        }
+
+        .all{
+            display: flex;
+            justify-content: space-around;
+        }
+        .zone {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+
+        .box {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+            z-index: 1;
+        }
+        .titre {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+            font-size: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+            z-index: 2;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .text {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            background-color: rgba(255, 255, 255, 0.9);
+            color:gray;
+            font-size: 16px;
+            text-align: center;
+            transition: bottom 0.5s ease-in-out;
+            z-index: 2;
+        }
+
+        .box:hover .image {
+            transform: translateY(-50%);
+        }
+
+        .box:hover .text {
+            bottom: 0;
+        }
+        .box:hover .titre {
+            display: none;
+        }
+
+        .carousel {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .carousel img.active {
+            display: block;
+        }
+
+        .carousel .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel .arrow.left {
+            left: 0;
+        }
+
+        .carousel .arrow.right {
+            right: 0;
+        }
+
+        .tout{
+            display: flex;
+            justify-content: space-around;
+        }
+        .player-card {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .player-card:hover {
+            transform: scale(1.05);
+        }
+
+        .player-overview, .player-info {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s;
+        }
+
+        .player-overview {
+            background-color: white;
+            z-index: 1;
+        }
+
+        .player-info {
+            background-image: url(GMvfudLWUAADin-.jpeg);
+            background-size: cover;
+            color: white;
+            text-shadow: 5px 5px 10px black;
+            flex-direction: row;
+            opacity: 0;
+            z-index: 2;
+        }
+        p{
+            text-align: center;
+            font-size: small;
+        }
+        .info{
+            padding: 10px;
+        }
+        .info p{
+            font-size: medium;
+            font-family: arial black;
+        }
+        .player-card:hover .player-info {
+            opacity: 1;
+        }
+
+        .player-card:hover .player-overview {
+            opacity: 0;
+        }
+
+        .player-overview img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: 10px;
+        }
+
+        .player-overview h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        @media screen and (max-width:926px){
+            .all{
+                flex-direction: column;
+            }
+            .tout{
+                flex-direction: column;
+            }
+            .zone{
+                height: 45vh;
+            }
+        }
+        @media screen and (max-width:568px){
+            h1{
+                font-size: 25px;
+            }
+            .zone{
+                height: 80vh;
+            }
+            .player-card{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width:1280px){
+            .tout{
+                margin-left: 200px;
+            }
+        }
+
+              
+    </style>
+</head>
+<body>
+    <header>       
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="projet.html">
+                    <img id="logo" src="logo-FCB.png" alt="FCB">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item"><a class="nav-link" href="history.html">history</a></li>
+                        <li class="nav-item"><a class="nav-link" href="shop.html">Boutique</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" id="search" style="border: 1px solid #8f0000;" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-primary" id="searchButton" type="submit">Search</button>
+                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item" style="padding-left: 5px;"><a class="nav-link" href="sign up.html"><i class="fa-solid fa-right-to-bracket" style="color: #8f0000; margin-right: 5px;"></i>Sign Up</a></li>
+                        <li class="nav-item" style="padding-left: 5px;"><a class="nav-link" href="login.html"><i class="fa-solid fa-user" style="color: #8f0000; margin-right: 5px;"></i>Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="present">
+        <h1>Barça News</h1>
+        <div class="all">
+            <div class="zone">
+                <div class="box">
+                    <img src="lopez.png" class="image" alt="">
+                    <div class="titre">Fermin hits double figures</div>
+                    <div class="text">MVP of the 2-0 win in Almeria has scored twice in the same game for the first time</div>
+                </div>
+            </div>
+            <div class="zone">
+                <div class="box">
+                    <img src="ter.png" class="image" alt="">
+                    <div class="titre">Ter Stegen and Gündogan called up for Euro 2024</div>
+                    <div class="text">Hosts announce their list of 27 players for the competition, with the blaugrana keeper and midfielder...</div>
+                </div>
+            </div>
+            <div class="zone">
+                <div class="box">
+                    <img src="xavi.png" class="image" alt="">
+                    <div class="titre">100 league games under Xavi</div>
+                    <div class="text">Almeria match on thursday takes the FC Barcelona's coach's tally into treble figures</div>
+                </div>
+            </div>
+            <div class="zone">
+                <div class="box">
+                    <div class="carousel">
+                        <button class="arrow left">❮</button>
+                        <img src="pic1.png" class="active" alt="Image 1">
+                        <img src="pic2.png" alt="Image 2">
+                        <img src="pic3.png" alt="Image 3">
+                        <img src="pic4.png" alt="Image 3">
+                        <button class="arrow right">❯</button>
+                    </div>
+                    <div class="titre">photos from the win against almeria</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="all">
+            <div class="zone">
+                <div class="box">
+                    <img src="barcelon.png" class="image" alt="">
+                    <div class="titre">FC Barcelona to also exhibit its first two NFTs featuring Jhon Cruyff And...</div>
+                    <div class="text">Club exhibition 'Masterpiece A digital tribute to Johan Cruyff and Alexia Putellas'...</div>
+                </div>
+            </div>
+            <div class="zone">
+                <div class="box">
+                    <img src="kits.png" class="image" alt="">
+                    <div class="titre">New mannequins in Barça Store to foster diversity</div>
+                    <div class="text">Models with wheelchairs, prosthesis, cochlear implants and glasses, or in large size feature...</div>
+                </div>
+            </div>
+            <div class="zone">
+                <div class="box">
+                    <img src="almeria.png" class="image" alt="">
+                    <div class="titre">Almeria 0-2 Barça: Fermin's double salute</div>
+                    <div class="text">Two goals from the 21-year-old put his team on excellent course for the runners-up slot and a place at the Spanis...</div>
+                </div>
+            </div>
+            <div class="zone">
+                <div class="box">
+                    <img src="barcaa.png" class="image" alt="">
+                    <div class="titre">Barça 41-29 Bada Huesca: Home season ends with impressive win</div>
+                    <div class="text">The blaugranes overcome their Aragonese opponents at the Palau after receiving the league trophy</div>
+                </div>
+            </div>
+        </div>
+
+        <h1>player</h1>
+        <div class="tout">
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="info">
+                        <p>BARÇA APPEARANCES</p>
+                        <p>93</p>
+                    </div>
+                    <div class="info">
+                        <p>BARÇA GOALS</p>
+                        <p>57</p>
+                    </div>
+                    <div class="info">
+                        <p>BARÇA ASSISTS</p>
+                        <p>17</p>
+                    </div>
+                </div>
+                <div class="player-overview">
+                    <img src="player1.png" alt="Player Picture">
+                    <h2>
+                        <strong>9</strong> Robert <strong>Lewandowski</strong>
+                    </h2>
+                    <p>Forward</p>
+                </div>
+            </div>
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="info">
+                        <p>BARÇA APPEARANCES</p>
+                        <p>40</p>
+                    </div>
+                    <div class="info">
+                        <p>BARÇA GOALS</p>
+                        <p>10</p>
+                    </div>
+                </div>
+                <div class="player-overview">
+                    <img src="player2.png" alt="Player Picture">
+                    <h2>
+                        <strong>16</strong> Fermin <strong>López</strong>
+                    </h2>
+                    <p>Midfield</p>
+                </div>
+            </div>
+
+            <div class="player-card">
+                <div class="player-info">
+                    <div class="info">
+                        <p>BARÇA APPEARANCES</p>
+                        <p>86</p>
+                    </div>
+                    <div class="info">
+                        <p>BARÇA GOALS</p>
+                        <p>20</p>
+                    </div>
+                    <div class="info">
+                        <p>BARÇA ASSISTS</p>
+                        <p>23</p>
+                    </div>
+                </div>
+                <div class="player-overview">
+                    <img src="player3.png" alt="Player Picture">
+                    <h2>
+                        <strong>11 Raphinha</strong>
+                    </h2>
+                    <p>Forward</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            let currentImageIndex = 0;
+            const images = $('.carousel img');
+
+            function showImage(index) {
+                images.removeClass('active').eq(index).addClass('active');
+            }
+
+            $('.carousel .arrow.left').click(function() {
+                currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                showImage(currentImageIndex);
+            });
+
+            $('.carousel .arrow.right').click(function() {
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                showImage(currentImageIndex);
+            });
+        });
+    </script>
+</body>
+</html>
